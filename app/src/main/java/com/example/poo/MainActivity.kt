@@ -31,6 +31,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Main() {
     Scaffold( //pode ignorar se quiser esta parte, é só pra enfeitar
+        modifier = Modifier.fillMaxSize(),
         topBar = {
             TopAppBar(
                 title = { Text(text = "Orientação a objetos", fontSize = 26.sp)},
@@ -49,12 +50,12 @@ fun Main() {
             // 2 - Agora que a classe Pessoa existe, vem o conceito de "instanciar ela". E isso se faz por meio de objetos:
             val pessoa = Pessoa("Havik Malik Salamaleico Bil", 327)
             // os objetos nada mais são que variaveis. E quando tu fala que esse objeto pertence a uma classe, basta abrir () que ele ja vai pedir os parâmetros.
-            //Novamente, os parâmetros//atributos são OBRIGATÓRIOS. Então, no seu código não existe uma pessoa sem idade.
+            //Novamente, os parâmetros//atributos são OBRIGATÓRIOS. Então, no seu código não existe uma pessoa sem idade, por exemplo.
 
             // 3 - Agora que a pessoa existe, a gente pode mandar ela executar algo:
             pessoa.saudacoes(pessoa = pessoa)
             // nao se preocupa em entender essa linha acima, entendendo a lógica ta suave.
-            // a gente só chamou uma função que a pessoa exxecuta.
+            // a gente só chamou uma função que a classe da pessoa executa.
 
 
             // ================ //
@@ -63,11 +64,16 @@ fun Main() {
             val trabalhador = Trabalhador("Hillary Clinton", 75, "Advogada e política americana", 2.00)
             //abra os () que o próprio jetpack vai mostrar o que tu precisa preencher.
             //Trabalhador herdou o nome e idade de pessoa!
+            // E novamente, um trabalhador aparece como trabalhador (val trabalhador = Trabalhador) mas, ainda assim recebe algumas coisas de Pessoa.
 
             //Objeto criado, agora vamos mandar ele fazer algo:
             trabalhador.exibirtrabalhador(trabalhador = trabalhador)
+
             //novamente nao se preocupe com a sintaxe.
-            //
+            //É importante entender uma fita em especifico aqui, se tu for na classe Trabalhador e olhar a primeira linha da função,
+            //vai reparar que o trabalhador executa uma ação da classe Pessoa (trabalhador.saudacoes)
+            //Saudações pertence apenas às pessoas, eu nao criei em trabalhador! Então, um trabalhador herdou
+            //uma ação básica de uma pessoa.
         }
     }
 

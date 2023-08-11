@@ -6,7 +6,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
 open class Pessoa(val nome:String, val idade:Int) { // <- Primeiro, passamos os atributos que toda "pessoa" tem
 
     //isso acima é chamado de parâmetros. Quando voce "criar" uma nova "pessoa", vai ser obrigatório que contenha esses parâmetros.
